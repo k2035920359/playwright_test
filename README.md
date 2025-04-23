@@ -1,2 +1,2 @@
 # playwright_test
-test case
+test case for product in AIRA
