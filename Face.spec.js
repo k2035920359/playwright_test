@@ -114,6 +114,30 @@ test('video device', async ({ page }) => {
 });
 
 test('Events', async ({ page }) => {
+    await page.waitForLoadState('networkidle');
     await page.getByText('Events').click();
     await page.getByRole('link', { name: 'Event Management' }).click();
+});
+
+test('Boards', async ({ page }) => {
+    await page.waitForLoadState('networkidle');
+    await page.getByText('Boards').click();
+    await page.getByRole('link', { name: 'Welcome Board' }).click();
+    await page.getByRole('link', { name: 'Attendance Board' }).click();
+    await page.getByRole('link', { name: 'Occupancy Board' }).click();
+    await page.getByRole('link', { name: 'Security Mode' }).click();
+    await page.getByRole('link', { name: 'Visitor Registration' }).click();
+});
+
+test('Settings', async ({ page }) => {
+    await page.waitForLoadState('networkidle');
+    await page.getByText('System Settings').click();
+    await page.getByRole('link', { name: 'General Settings' }).click();
+    await page.getByRole('link', { name: 'Account Management' }).click();
+    await page.getByRole('link', { name: 'Backup & Restore' }).click();
+    await page.getByRole('link', { name: 'Upgrade Software' }).click();
+    await page.getByRole('link', { name: 'Factory Default' }).click();
+    await page.getByRole('link', { name: 'License' }).click();
+    await page.getByRole('link', { name: 'System Log' }).click();
+    await expect(page.getByText('System Log Search')).toBeVisible();
 });
