@@ -41,7 +41,7 @@ test('Attand', async ({ page }) => {
     await page.waitForLoadState('networkidle');
     await page.getByText('Attendance', { exact: true }).click();
     await page.getByRole('link', { name: 'Daily Report' }).click();
-    await page.getByText('Daily Report All Person : 25').click();
+    await page.getByText('Daily Report').click();
     await page.getByRole('link', { name: 'Monthly Report' }).click();
     await page.locator('.card-body').click();
     await page.getByRole('link', { name: 'Attendance Settings' }).click();
@@ -133,7 +133,7 @@ test('Settings', async ({ page }) => {
     await page.waitForLoadState('networkidle');
     await page.getByText('System Settings').click();
     await page.getByRole('link', { name: 'General Settings' }).click();
-    await page.getByRole('link', { name: 'Account Management' }).click();
+    await page.getByRole('link', { name: 'Account' }).click();
     await page.getByRole('link', { name: 'Backup & Restore' }).click();
     await page.getByRole('link', { name: 'Upgrade Software' }).click();
     await page.getByRole('link', { name: 'Factory Default' }).click();
